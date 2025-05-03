@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fetch</title>
+</head>
+<body>
+<div align="center">
+<h1>Student Records</h1>
+<hr>
+<div th:each="s:${students}">
+<h6 th:text="'Name: '+ ${s.name}"></h6>
+<h6 th:text="'Mobile: '+ ${s.mobile}"></h6>
+<h6 th:text="'Email: '+ ${s.email}"></h6>
+<h6 th:text="'Percentage: '+ ${s.percentage}"></h6>
+<hr>
+<hr>
+</div>
+</div>
+
+
+<table border="2px" align="center" cellspacing="2px" cellpadding="10px">
+<tr>
+<th>Name</th>
+<th>Phone No</th>
+<th>Email</th>
+<th>Percentage</th>
+</tr>
+<tr th:each="s:${students}">
+<td th:text="${s.name}"></td>
+<td th:text="${s.mobile}"></td>
+<td th:text="${s.email}"></td>
+<td th:text="${s.percentage}"></td>
+</tr>
+</table>
+
+
+
+
+</body>
+</html>
