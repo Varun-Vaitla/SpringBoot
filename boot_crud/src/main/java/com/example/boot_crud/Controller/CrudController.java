@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.boot_crud.Entity.Student;
 import com.example.boot_crud.Service.CrudService;
@@ -31,9 +32,9 @@ public class CrudController {
 		
 	}
 	@GetMapping("/fetch")
-	public String fetch(Model model)
+	public String fetch(Model model,@RequestParam(defaultValue = "") String search)
 	{
-		return service.fetch(model);
+		return service.fetch(model,search);
 	}
 
 }

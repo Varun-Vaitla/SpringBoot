@@ -19,8 +19,9 @@ public class CrudService {
 		return "home.html";
 	}
 
-	public String fetch(Model model) {
-		List<Student> students=repository.findAll();
+	public String fetch(Model model,String search) {
+		List<Student> students=null;
+		students = repository.findByNameLike("%"+ search +"%");
 		if(students.isEmpty())
 		{
 			model.addAttribute("message","No records found"); 
