@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FetchPage</title>
+</head>
+<body>
+<div>
+<h1>Student Details</h1>
+<form action="/fetchByName">
+<input type="text" name="search">
+<button>SearchByName</button><br>
+</form><br>
+
+<form action="/fetchByEmail">
+	<input type="text" name="searchEmail">
+	<button type="submit">SearchByEmail</button><br>
+</form><br>
+<form action="/fetchByAll">
+	<input type="text" name="searchAll">
+	<button type="submit">SearchByAll</button><br>
+</form><br>
+
+<table border="2px" cellpadding="10px">
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Mobile</th>
+<th>Percentage</th>
+<th>Delete/Edit</th>
+</tr>
+<tr th:each="s:${students}">
+<td th:text="${s.name}"></td>
+<td th:text="${s.email}"></td>
+<td th:text="${s.mobile}"></td>
+<td th:text="${s.percentage}"></td>
+<td><a th:href="'/delete/'+${s.id}"><button>Delete</button></a>
+    <a href="/edit"><button>Edit</button></a>
+</td>
+</tr>
+</table>
+
+</div>
+
+</body>
+</html>
