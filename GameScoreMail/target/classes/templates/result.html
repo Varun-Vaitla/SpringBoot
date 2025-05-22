@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Game Result</title>
+</head>
+<body>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #fdfbfb, #ebedee); /* light gradient */
+    text-align: center;
+    padding: 50px;
+    margin: 0;
+    color: #333;
+  }
+
+  h1 {
+    color: #2ecc71; /* green congratulatory color */
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  strong {
+    color: #3498db;
+  }
+
+  button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #357abd;
+  }
+
+  a {
+    text-decoration: none;
+  }
+</style>
+
+<h1>
+		Congratulations <span th:text="${name}"></span>!
+	</h1>
+	<p>
+		You guessed the number in <span th:text="${attempts}"></span>
+		attempts.
+	</p>
+	<p>
+		Your score: <strong th:text="${points}"></strong>
+	</p>
+	<p>
+		Your score is Sent to : <strong th:text="${email}"></strong>
+	</p>
+
+	<a href="/">
+		<button>Restart</button>
+	</a>
+
+
+</body>
+</html>
